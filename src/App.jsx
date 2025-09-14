@@ -8,7 +8,7 @@ function App(){
  return(
 
    <>
-   <div className="#Pattern"></div>
+   <div className="#Skeleton"></div>
 
    <div className="#Container">
      <header className='text-center flex flex-col items-center' >
