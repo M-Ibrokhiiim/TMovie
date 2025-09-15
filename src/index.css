@@ -30,12 +30,13 @@ html,body {
   height: 100%;         
   margin: 0;            
   padding:0;
-}
+  background: #646cff;
+ }
 
 body {
-  padding:50px;
-  background:rgb(25, 25, 94);  
-  background-size: cover; 
+   
+  background:rgb(19, 19, 70);  
+  background-size: auto; 
   background-repeat: no-repeat;
 }
 

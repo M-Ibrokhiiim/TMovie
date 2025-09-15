@@ -1,18 +1,67 @@
-import Pic1 from './assets/1.JPG'
-import Pic2 from './assets/2.JPG'
-import Pic3 from './assets/3.JPG'
-import MovieIcon from './assets/movieIcon.jsx'
+import { useState,useEffect } from 'react'
+import Pic1 from './assets/PICS/1.JPG'
+import Pic2 from './assets/PICS/2.JPG'
+import Pic3 from './assets/PICS/3.JPG'
+import MovieIcon from './assets/SVG/movieIcon.jsx'
+
+// Components
+import Search from './components/Search.jsx'
+import MovieCard from './components/MovieCard.jsx'
+ 
 
 
+
+// API_KEY='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZjI5OGRlMTQ4ZDQwMGU2YWU1ZTFlZWI1NjlkNzIyMSIsIm5iZiI6MTc1NzkyOTQxNC43NDgsInN1YiI6IjY4YzdkZmM2ZmUwZjM4MDdlZGNhNzNiOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Njp2BhJUW4MkBX_Z5i5LQEZqex_VujQHzmt6mQu3KOY'
 
 function App(){
 
- return(
+  const [searchQuery,setSearchQuery]=useState()
+  const [movies,setMovies]=useState([])
+  const [loading,setLoading] = useState(false)
+  const [error,setError] = useState(false)
 
+// API parameters
+  const baseURL=import.meta.env.VITE_API_BASE_URL
+  const token=localStorage.getItem("token")
+
+  const getMovies = async () =>{
+    try{
+      setLoading(true)
+
+      const response = await fetch(`${baseURL}/discover/movie?sort_by=popularity.desc`,{
+         method:'GET',
+         headers:{
+          'Authorization':`Bearer ${token}`,
+          'Accept':'application/json',
+         }
+      })
+
+      if(!response.ok){
+        setLoading(false)
+        throw new Error('Error')
+      }
+       
+      const data = await response.json()
+      console.log(data)
+
+      setMovies(data.results) 
+    }catch(err){
+      setError(true)
+      console.log(err)
+    }finally{
+      setLoading(false)
+    }
+  }
+
+  useEffect(()=>{
+    getMovies()
+  },[])
+
+ return(
    <>
    <div className="#Skeleton"></div>
 
-   <div className="#Container">
+   <div className="#Container flex flex-col items-center bg-[#123163] p-10">
      <header className='text-center text-[12px]  -mt-6 flex flex-col items-center'>
         <MovieIcon/>
         <div className='relative bg-red-50  ml-28 w-[400px]'>
@@ -22,11 +71,21 @@ function App(){
         </div>
        <h1 className="capitalize font-mono font-bold ml-6 text-white mt-62  max-w-[700px] text-center"> Find <span className="text-gradient"> movies</span> you'll love without  the hassle</h1>
      </header>
-     <main>
-      
+     <main className='flex flex-col items-center'>
+      <Search setSearchQuery={setSearchQuery}/>
+      <section className='flex flex-col items-center'>
+        <div className='flex flex-col items-center'>
+          <p className='text-3xl mt-22 ml-10 text-white'>{loading ? "Loading..." : " " }</p>
+          <p className="text-2xl text-red-400 ml-10 mt-10">{error ? "Please reload page ! " : " "}</p>
+        </div>
+        <div className=' w-[70vw] min-w-[400px] text-amber-50 flex flex-wrap justify-between gap-10 '>
+         {movies.map((movie)=>(
+          <MovieCard  key={movie.id}  movie={movie}/>
+          ))} 
+        </div>
+      </section>
      </main>
    </div>
-   
    </>
  )
 }
