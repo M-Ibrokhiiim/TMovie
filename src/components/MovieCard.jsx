@@ -3,8 +3,17 @@ function MovieCard({movie:{
 }}){
 
     return(
-        <div className="active:scale-50">
-            <img className="rounded-2xl shadow-md  shadow-amber-50" src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` :'null'} width='220' /> 
+        <div className="active:scale-90 p-4 bg-[#365991] rounded-2xl hover:scale-110 w-[200px] cursor-pointer duration-300 flex items-center flex-col">
+            <img className="rounded-xl shadow-md w-[220px] h-[250px]" src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` :'null'} width='220' height='350' />      
+            <div className=" w-[160px] mt-3">
+                <p className="text-[12px] font-serif mb-2">{title.length > 20 ? title.slice(0,25) : title}</p>
+                <div className="flex text-[10px] gap-[1px]">
+                <p>⭐️</p>
+                <p>{vote_average ? vote_average.toFixed(1) : '0'}</p> 
+                <p className="capitalize">•{original_language}</p>
+                <p>•{release_date ? release_date.slice(0,4) : 'Old'}</p>
+                </div>
+            </div>
         </div>
     )
 
