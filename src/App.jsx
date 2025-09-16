@@ -1,4 +1,6 @@
 import { useState,useEffect } from 'react'
+import { useDebounce } from 'react-use'
+
 import Pic1 from './assets/PICS/1.JPG'
 import Pic2 from './assets/PICS/2.JPG'
 import Pic3 from './assets/PICS/3.JPG'
@@ -19,6 +21,8 @@ function App(){
   const [movies,setMovies]=useState([])
   const [loading,setLoading] = useState(false)
   const [error,setError] = useState(false)
+  const [debounceSearchTerm,setDebounceSearchTerm] = useState('')
+
 
 // API parameters
   const baseURL=import.meta.env.VITE_API_BASE_URL
@@ -54,10 +58,11 @@ function App(){
       setLoading(false)
     }
   }
-
+  useDebounce(()=>setDebounceSearchTerm(searchQuery),1000,[searchQuery])
+  
   useEffect(()=>{
-    getMovies(searchQuery)
-  },[searchQuery])
+    getMovies(debounceSearchTerm)
+  },[debounceSearchTerm])
 
  return(
    <>
