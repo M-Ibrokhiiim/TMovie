@@ -80,7 +80,7 @@ function App(){
       <h1 className='text-white absolute top-48 shadow-2xl text-shadow-2xs left-4 font-bold font-mono'> {movies.length >0 ? 'All Movies' :''}</h1>
       <section className='flex flex-col items-center mt-6'>
         <div className='flex flex-col items-center'>
-          <p className='text-3xl mt-22 ml-10 text-white'>{loading ? <span class="loader"></span>  : " " }</p>
+          <p className='text-3xl mt-22 ml-10 text-white'>{loading && movies.length >0 ? <span class="loader"></span>  : " " }</p>
           <p className="text-2xl text-red-400 ml-10 mt-10">{error ? "Please reload page ! " : " "}</p>
         </div>
         <div className=' w-[68vw] min-w-[400px] text-amber-50 flex flex-wrap  flex-col justify-between gap-10 '>
