@@ -59,7 +59,7 @@ function App(){
     }
   }
   useDebounce(()=>setDebounceSearchTerm(searchQuery),1000,[searchQuery])
-  
+
   useEffect(()=>{
     getMovies(debounceSearchTerm)
   },[debounceSearchTerm])
@@ -69,33 +69,32 @@ function App(){
    <div className="#Skeleton"></div>
 
    <div className="#Container flex flex-col items-center bg-[#123163] p-10">
-     <header className='text-center text-[12px]  -mt-6 flex flex-col items-center'>
+     <header className='text-center sm:text-[12px] xl:text-[10px]  text-[5px] -mt-6 flex flex-col items-center'>
         <MovieIcon setSearchQuery={setSearchQuery}/>
-        <p>{searchQuery}</p>
-        <div className='relative bg-red-50  ml-28 w-[400px]'>
-         <img src={Pic1} alt="Pic1"  className='h-[220px] w-[130px] rounded-2xl shadow-2xl shadow-black absolute left-[20%] -top-4 z-2'/>
-         <img src={Pic2} alt='Pic2'  className='h-[200px] w-[130px] rounded-2xl shadow-2xl shadow-black absolute -left-[10%] -rotate-14'/> 
-         <img src={Pic3} alt='Pic2'  className='h-[200px] w-[130px] rounded-2xl shadow-2xl shadow-black absolute left-[52%] rotate-14'/> 
+        <div className='relative  md:w-[300px] md:ml-14  -ml-4  w-[180px]  '>
+         <img src={Pic1} alt="Pic1"  className='md:h-[220px] md:w-[130px] xl:w-[140px] xl:h-[210px] h-[180px] w-[120px] rounded-2xl shadow-2xl shadow-black absolute left-[20%] -top-4 z-2'/>
+         <img src={Pic2} alt='Pic2'  className='md:h-[200px] md:w-[130px] xl:w-[120px] xl:h-[200px] h-[160px] w-[120px] rounded-2xl shadow-2xl shadow-black absolute -left-[10%] -rotate-14'/> 
+         <img src={Pic3} alt='Pic2'  className='md:h-[200px] md:w-[130px] xl:w-[120px] xl:h-[200px] h-[160px] w-[120px] rounded-2xl shadow-2xl shadow-black absolute left-[52%] rotate-14'/> 
         </div>
-       <h1 className="capitalize font-mono font-bold ml-6 text-white mt-62  max-w-[700px] text-center"> Find <span className="text-gradient"> movies</span> you'll love without  the hassle</h1>
+       <h1 className="capitalize font-mono font-bold  text-white sm:mt-62 mt-47  xl:mt-57 xl:w-[500px]   sm:max-w-[700px] text-center"> Find <span className="text-gradient"> movies</span> you'll love without  the hassle</h1>
      </header>
      
-     <main className='flex flex-col items-center  relative text-[10px] '>
+     <main className=' flex flex-col items-center w-full relative sm:text-[10px] -mt-8 text-[6px] '>
       <Search setSearchQuery={setSearchQuery} searchQuery={searchQuery}/>
-      <h1 className='text-white absolute top-48 shadow-2xl text-shadow-2xs left-4 font-bold font-mono'> {movies.length >0 ? 'All Movies' :''}</h1>
-      <section className='flex flex-col items-center mt-6'>
+      <h1 className='text-white absolute  top-50  shadow-2xl text-shadow-2xs left-28 sm:left-1 md:left-26  lg:left-32 xl:left-50 2xl:left-70   sm font-bold font-mono'> {movies.length >0 ? 'All Movies' :''}</h1>
+      <section className='flex flex-col items-center mt-6  w-full'>
         <div className='flex flex-col items-center'>
           <p className='text-3xl mt-22 ml-10 text-white'>{loading && movies.length >0 ? <span class="loader"></span>  : " " }</p>
           <p className="text-2xl text-red-400 ml-10 mt-10">{error ? "Please reload page ! " : " "}</p>
         </div>
-        <div className=' w-[68vw] min-w-[400px] text-amber-50 flex flex-wrap  flex-col justify-between gap-10 '>
+        <div className=' w-[68vw] min-w-[400px] text-amber-50 flex flex-wrap -mt-1 flex-col justify-between gap-10 '>
          {movies.length > 0 
             ? <div className='flex flex-wrap justify-around gap-10'>
                 {movies.map((movie)=>(
                 <MovieCard  key={movie.id}  movie={movie}/>
                 ))} 
               </div>
-            : <div className='gap-4 flex flex-col  items-center'>
+            : <div className='gap-4 flex flex-col -mt-20 items-center'>
                 <span className="retry"></span> <p className='text-2xl text-red-600 '>Please <span className='text-white underline'>research,</span> film not found</p>
               </div>}
         </div>
