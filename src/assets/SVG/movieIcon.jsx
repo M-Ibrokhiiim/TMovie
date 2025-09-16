@@ -1,11 +1,9 @@
-function movieIcon(){
+function movieIcon({setSearchQuery}){
     return(
         <>
-        {/* <svg xmlns="http://www.w3.org/2000/svg" width="50" height="150" viewBox="0 0 48 48">
-          <path className="text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M36.032 16.131s-6.473-3.54-11.227-3.54s-9.912 4.046-9.912 9.305c0 3.588 1.315 5.36 1.315 5.36c-5.664-2.24-6.675-6.574-6.675-9.81S11.657 4.5 25.007 4.5c8.294 0 14.261 4.147 14.261 4.147zM11.777 31.335s6.079 4.074 12.41 4.074c4.754 0 9.912-4.046 9.912-9.305c0-3.588-1.314-5.36-1.314-5.36c5.663 2.24 6.675 6.574 6.675 9.81S37.336 43.5 23.985 43.5c-9.361 0-15.445-4.68-15.445-4.68z"/>
-        </svg> */}
-        <svg className="shadow-md mb-10  shadow-amber-400 w-[100px] h-[100px] rounded-[600px]" xmlns="http://www.w3.org/2000/svg" width="120" height="110" viewBox="0 0 24 24">
-          <g fill="none">
+        <div >
+          <svg  onClick={()=>setSearchQuery("")} className="shadow-md mb-10 hover:scale-90 cursor-pointer duration-300 active:scale-120 active:rotate-360  shadow-amber-400 w-[100px] h-[100px] rounded-[600px]" xmlns="http://www.w3.org/2000/svg" width="120" height="110" viewBox="0 0 24 24">
+            <g fill="none">
          <path fill="url(#tokenBrandedCrown0)" d="M12 18a6 6 0 1 0 0-12a6 6 0 0 0 0 12m0 1.286a7.286 7.286 0 1 0 0-14.572a7.286 7.286 0 0 0 0 14.572"/>
          <path fill="url(#tokenBrandedCrown1)" d="M12 18a6 6 0 1 0 0-12a6 6 0 0 0 0 12"/>
          <path fill="url(#tokenBrandedCrown2)" d="M7.285 10.714a.429.429 0 1 0 0-.857a.429.429 0 0 0 0 .857"/>
@@ -49,8 +47,9 @@ function movieIcon(){
                 <stop offset="1" stop-color="#62615F"/>
             </linearGradient>
           </defs>
-        </g>
-      </svg> 
+            </g>
+          </svg> 
+        </div>
         </>
     )
 }
