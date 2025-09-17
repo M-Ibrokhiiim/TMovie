@@ -23,7 +23,7 @@ function Menu(){
                           <img className='lg:w-[40px] lg:h-[37px]   sm:w-[25px]  sm:h-[35px] w-[40px] h-[22px] absolute sm:top-[85px] top-[85px] sm:left-[4px] left-[9px] cursor-pointer  shadow-md hover:scale-110 active:scale-90 duration-150 rounded-3xl' src={Insta}/>
                         </a>
                         {/* Whats App link */}
-                        <a href="whatsapp://send?phone=+998916351058&text=Hello%20from%20Tmovie%20App%20user" aria-label="Open WhatsApp app">
+                        <a href="whatsapp://send?phone=+998916351058&text=Hello%20from%20TMovie%20App%20user" aria-label="Open WhatsApp app">
                          <img className='lg:w-[45px] lg:h-[40px]   sm:w-[50px] sm:h-[40px] absolute       top-[130px] sm:left-[45px] left-[45px] cursor-pointer  shadow-md hover:scale-110 active:scale-90 duration-150' src={Whatsapp}/>
                          </a>
                     </div>
