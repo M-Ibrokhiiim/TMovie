@@ -2,7 +2,7 @@ function movieIcon({setSearchQuery}){
     return(
         <>
         <div >
-          <svg  onClick={()=>setSearchQuery("")} className="shadow-md mb-10  hover:scale-90 cursor-pointer duration-200 active:scale-120 active:rotate-360  shadow-amber-400 sm:w-[100px] xl:w-[100px] xl:h-[100px] w-[80px] sm:h-[100px] h-[80px] rounded-[600px]" xmlns="http://www.w3.org/2000/svg" width="120" height="110" viewBox="0 0 24 24">
+          <svg  onClick={()=>setSearchQuery("")} className="shadow-md mb-10  hover:scale-90 cursor-pointer duration-200 active:scale-120 active:rotate-360  shadow-amber-400 sm:w-[100px]  xl:w-[80px] xl:h-[80px] w-[80px] sm:h-[100px] h-[80px] rounded-[600px]" xmlns="http://www.w3.org/2000/svg" width="120" height="110" viewBox="0 0 24 24">
             <g fill="none">
          <path fill="url(#tokenBrandedCrown0)" d="M12 18a6 6 0 1 0 0-12a6 6 0 0 0 0 12m0 1.286a7.286 7.286 0 1 0 0-14.572a7.286 7.286 0 0 0 0 14.572"/>
          <path fill="url(#tokenBrandedCrown1)" d="M12 18a6 6 0 1 0 0-12a6 6 0 0 0 0 12"/>

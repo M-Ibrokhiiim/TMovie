@@ -3,7 +3,7 @@
  function Search({setSearchQuery,searchQuery}){
    return(
     <>
-    <div className="bg-[#130738]  shadow-sm shadow-blue-300 sm:rounded-2xl rounded-xl mt-15 sm:w-[35vw] w-[250px] md:w-[500px] lg:w-[500px] xl:w-[580px] xl:h-[50px] md:h-[50px] sm:ml-10 sm:h-[60px] h-[40px] p-4  flex items-center justify-center">
+    <div className="bg-[#130738]  shadow-sm shadow-blue-300 sm:rounded-2xl 2xl:mt-20 rounded-xl mt-15 sm:w-[35vw] w-[250px] md:w-[500px] lg:w-[500px] xl:w-[580px] xl:h-[40px] md:h-[50px] 2xl:h-[50px] sm:ml-10 sm:h-[60px] h-[40px] p-4  flex items-center justify-center">
          <SearchIcon/>
          <input 
             value={searchQuery}
