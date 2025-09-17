@@ -6,12 +6,13 @@ import Pic2 from './assets/PICS/2.JPG'
 import Pic3 from './assets/PICS/3.JPG'
 import MovieIcon from './assets/SVG/movieIcon.jsx'
 import Threedots from './assets/SVG/verticalDots.jsx'
+import Arrow from './assets/PICS/Arrow4.png'
 
-import TG from './assets/PICS/TG.png'
 // Components
 import Search from './components/Search.jsx'
 import MovieCard from './components/MovieCard.jsx'
 import Bottom from './components/Footer.jsx'
+import Menu from './components/Menu.jsx'
  
 
 
@@ -25,7 +26,16 @@ function App(){
   const [loading,setLoading] = useState(false)
   const [error,setError] = useState(false)
   const [debounceSearchTerm,setDebounceSearchTerm] = useState('')
+  const [toggle,setToggle] = useState(true)
 
+
+
+//Toggle function
+
+const toggleFunction= () => {
+  setToggle(!toggle)
+  console.log(toggle)
+}
 
 // API parameters
   const baseURL=import.meta.env.VITE_API_BASE_URL
@@ -74,17 +84,19 @@ function App(){
    <div className="#Container flex flex-col items-center bg-[#123163] p-10 ">
      <header className='text-center sm:text-[12px] xl:text-[8px]  text-[5px] -mt-6 flex flex-col items-center'>
           <MovieIcon setSearchQuery={setSearchQuery}/>
-          {/* <p className='text-white text-2xl left-[95%] fixed'> 
-          <Threedots />
-          {/* <div className='bg-red-400 w-[170px] h-[200px] absolute z-90 right-[10px] top-[5px]'>
-            <div>
-               <img className='w-[37px] h-[35px] rounded-3xl' src={TG}/>
-               <img className='w-[37px] h-[35px] rounded-3xl' src={TG}/>
-               <img className='w-[37px] h-[35px] rounded-3xl' src={TG}/>
-               <img className='w-[37px] h-[35px] rounded-3xl' src={TG}/>
-            </div>
-          </div> */}
-          {/* </p> */} */}
+           <div className='text-white text-2xl 2xl:left-[94%] md:left-[95%]   mt-2 left-[85%] fixed z-50 cursor-pointer'> 
+           {toggle 
+                ? <img  onClick={toggleFunction} className='md:w-[25px] w-[20px]    duration-150  cursor-pointer    hover:scale-120 active:-translate-y-[1px] hover:cursor-pointer active:rotate-20 active:scale-90 h-[30px] mr-10 mt-1' src={Arrow}/>
+                : <Threedots toggleFunction={toggleFunction} />
+            } 
+      
+          </div>  
+          {
+            toggle
+            ?  <Menu/>
+            : ''
+          }
+          
         <div className='relative  md:w-[300px] md:ml-14  xl:-mt-2 xl:ml-16 -ml-4  w-[180px]  '>
          <img src={Pic1} alt="Pic1"  className='md:h-[220px] md:w-[130px] xl:w-[130px] xl:h-[190px] h-[180px] w-[120px] rounded-2xl shadow-2xl shadow-black absolute left-[20%] -top-4 z-2'/>
          <img src={Pic2} alt='Pic2'  className='md:h-[200px] md:w-[130px] xl:w-[110px] xl:h-[180px] h-[160px] w-[120px] rounded-2xl shadow-2xl shadow-black absolute -left-[10%] -rotate-14'/> 
@@ -95,7 +107,7 @@ function App(){
      
      <main className=' flex flex-col items-center w-full xl:text-[8px] relative sm:text-[10px] md:text-[8px] -mt-8 text-[6px] '>
       <Search setSearchQuery={setSearchQuery} searchQuery={searchQuery}/>
-      <h1 className='text-white absolute  top-38 lg:top-38  shadow-2xl text-shadow-2xs xl:-mt-1 2xl:top-60 left-16 sm:left-1 md:left-26  lg:left-32 xl:left-55 2xl:left-83    font-bold font-mono'> {movies.length >0 ? 'All Movies' :''}</h1>
+      <h1 className='text-white absolute  top-38 lg:top-38  shadow-2xl text-shadow-2xs xl:-mt-1 2xl:top-60 sm:left-26  md:left-26  lg:left-32 xl:left-55 2xl:left-83    font-bold font-mono'> {movies.length >0 ? 'All Movies' :''}</h1>
       <section className='flex flex-col items-center mt-6  w-full'>
         <div className='flex flex-col items-center'>
           <p className='text-3xl mt-22 ml-10 text-white'>{loading && movies.length >0 ? <span class="loader"></span>  : " " }</p>
@@ -115,7 +127,7 @@ function App(){
       </section>
      </main>
    </div>
-    <footer className={movies.length >0 ? 'bg-[#6640a3] w-full sm:h-[170px] lg:h-[160px] p-4 flex justify-center items-center' : 'bg-[#6640a3] mt-[88px] w-full flex justify-center h-[150px]'}>
+    <footer className={movies.length >0 ? 'bg-[#6640a3] w-full sm:h-[170px] lg:h-[160px] p-4 flex justify-center items-center' : 'bg-[#6640a3] mt-[88px] w-full flex justify-center items-center h-[150px]'}>
        <Bottom/>
      </footer>
    </>
