@@ -84,7 +84,7 @@ const toggleFunction= () => {
    <div className="#Container flex flex-col items-center bg-[#123163] p-10 ">
      <header className='text-center sm:text-[12px] xl:text-[8px]  md:text-[12px] text-[8.4px] -mt-6 flex flex-col items-center'>
           <MovieIcon setSearchQuery={setSearchQuery}/>
-           <div className='text-white text-2xl 2xl:left-[94%] md:left-[95%]   mt-2 left-[85%] fixed z-50 cursor-pointer'> 
+           <div className='text-white text-2xl 2xl:left-[94%] md:left-[95%]   sm:mt-2  mt-10 left-[90%]  fixed z-50 cursor-pointer'> 
            {toggle 
                 ? <img  onClick={toggleFunction} className='md:w-[25px] w-[20px]    duration-150  cursor-pointer    hover:scale-120 active:-translate-y-[1px] hover:cursor-pointer active:rotate-20 active:scale-90 h-[30px] mr-10 mt-1' src={Arrow}/>
                 : <Threedots toggleFunction={toggleFunction} />
