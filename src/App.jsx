@@ -26,7 +26,7 @@ function App(){
   const [loading,setLoading] = useState(false)
   const [error,setError] = useState(false)
   const [debounceSearchTerm,setDebounceSearchTerm] = useState('')
-  const [toggle,setToggle] = useState(true)
+  const [toggle,setToggle] = useState(false)
 
 
 
