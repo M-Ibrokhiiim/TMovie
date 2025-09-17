@@ -82,7 +82,7 @@ const toggleFunction= () => {
    <div className="#Skeleton"></div>
 
    <div className="#Container flex flex-col items-center bg-[#123163] p-10 ">
-     <header className='text-center sm:text-[12px] xl:text-[8px]  text-[5px] -mt-6 flex flex-col items-center'>
+     <header className='text-center sm:text-[12px] xl:text-[8px]  md:text-[12px] text-[9px] -mt-6 flex flex-col items-center'>
           <MovieIcon setSearchQuery={setSearchQuery}/>
            <div className='text-white text-2xl 2xl:left-[94%] md:left-[95%]   mt-2 left-[85%] fixed z-50 cursor-pointer'> 
            {toggle 
@@ -102,7 +102,7 @@ const toggleFunction= () => {
          <img src={Pic2} alt='Pic2'  className='md:h-[200px] md:w-[130px] xl:w-[110px] xl:h-[180px] h-[160px] w-[120px] rounded-2xl shadow-2xl shadow-black absolute -left-[10%] -rotate-14'/> 
          <img src={Pic3} alt='Pic2'  className='md:h-[200px] md:w-[130px] xl:w-[110px] xl:h-[180px] h-[160px] w-[120px] rounded-2xl shadow-2xl shadow-black absolute left-[52%] rotate-14'/> 
         </div>
-       <h1 className="capitalize font-mono font-bold  text-white sm:mt-62 mt-50  xl:mt-54 xl:w-[450px]   sm:w-[700px] w-[270px] text-center"> Find <span className="text-gradient"> movies</span> you'll love without  the hassle</h1>
+       <h1 className="capitalize font-mono font-bold  text-white sm:mt-62 mt-50  xl:mt-54 xl:w-[450px]   sm:w-[700px] bg-red-200 w-[420px] text-center"> Find <span className="text-gradient"> movies</span> you'll love without  the hassle</h1>
      </header>
      
      <main className=' flex flex-col items-center w-full xl:text-[8px] relative sm:text-[10px] md:text-[8px] -mt-8 text-[6px] '>
