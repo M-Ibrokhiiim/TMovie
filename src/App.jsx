@@ -105,7 +105,7 @@ const toggleFunction= () => {
        <h1 className="capitalize font-mono font-bold  text-white sm:mt-62 mt-50  xl:mt-54 xl:w-[450px]   sm:w-[700px] w-[400px] text-center"> Find <span className="text-gradient"> movies</span> you'll love without  the hassle</h1>
      </header>
      
-     <main className=' flex flex-col items-center w-full xl:text-[8px] relative sm:text-[10px] md:text-[8px] -mt-8 text-[6px] '>
+     <main className=' flex flex-col items-center w-full xl:text-[8px] relative sm:text-[10px] md:text-[8px] -mt-8 text-[8px] text-shadow-md text-shadow-black '>
       <Search setSearchQuery={setSearchQuery} searchQuery={searchQuery}/>
       <h1 className='text-white absolute  top-38 lg:top-38  shadow-2xl text-shadow-2xs xl:-mt-1 2xl:top-60 sm:left-26  md:left-26  lg:left-32 xl:left-55 2xl:left-83    font-bold font-mono'> {movies.length >0 ? 'All Movies' :''}</h1>
       <section className='flex flex-col items-center mt-6  w-full'>
