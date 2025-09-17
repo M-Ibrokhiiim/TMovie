@@ -10,7 +10,7 @@ function footer(){
               <img 
                  src={MovieFooter}
                   alt="pic" 
-                  className='2xl:w-75 2xl:h-29 md:w-20 md:h-20 lg:h-24 lg:mt-3 lg:w-70 w-23 h-22.5 ' 
+                  className='2xl:w-75 2xl:h-29 md:w-20 md:h-20 lg:h-24 lg:mt-3 lg:w-70 w-22 h-22.5 ' 
                    />
             </div>
             <div className="flex  ml-0 2xl:text-[9px] lg:text-[6px]  md:text-[5px] md:gap-15 text-[5.2px]  gap-3">
