@@ -5,7 +5,7 @@ function footer(){
  
     return(
         <>
-        <section className="2xl:w-[1200px] lg:w-[950px] md:w-[500px]   w-[250px]    flex justify-between p-4 mt-2 h-[90px] items-center ">
+        <section className="2xl:w-[1200px] lg:w-[950px] md:w-[530px]   w-[250px]    flex justify-between p-4 mt-2 h-[90px] items-center ">
             <div className='flex sm:items-center '>  
               <img 
                  src={MovieFooter}
