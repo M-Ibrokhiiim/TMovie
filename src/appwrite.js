@@ -16,7 +16,7 @@ const databases= new Databases(client)
 
 export async function passMovie(){
     try{
-        const response= await databases.listDocuments(DatabaseID,CollectionID)
+        const response= await databases.listDocuments(DatabaseID,CollectionI1D)
         const data= response.documents
         console.log(data)
     }catch(err){
