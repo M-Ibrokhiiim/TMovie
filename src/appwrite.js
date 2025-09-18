@@ -16,9 +16,10 @@ const databases= new Databases(client)
 
 export async function passMovie(){
     try{
-        const response= await databases.listDocuments(DatabaseID,CollectionI1D)
+        const response= await databases.listDocuments(DatabaseID,CollectionID)
         const data= response.documents
         console.log(data)
+        // console.log('Data')
     }catch(err){
         console.log('Error occured at backend!')
     }

@@ -35,9 +35,8 @@ function App(){
 
 //Toggle function
 
-const toggleFunction= () => {
+const toggleFunction=()=>{
   setToggle(!toggle)
-  console.log(toggle)
 }
 
 // API parameters
