@@ -13,7 +13,10 @@ import Search from './components/Search.jsx'
 import MovieCard from './components/MovieCard.jsx'
 import Bottom from './components/Footer.jsx'
 import Menu from './components/Menu.jsx'
+
+// Appwrite database
  
+import {passMovie } from './appwrite.js'
 
 
 
@@ -74,7 +77,8 @@ const toggleFunction= () => {
   useDebounce(()=>setDebounceSearchTerm(searchQuery),1000,[searchQuery])
 
   useEffect(()=>{
-    getMovies(debounceSearchTerm)
+    getMovies(debounceSearchTerm),
+    passMovie()
   },[debounceSearchTerm])
 
  return(
