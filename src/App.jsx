@@ -16,7 +16,7 @@ import Menu from './components/Menu.jsx'
 
 // Appwrite database
  
-import {passMovie } from './appwrite.js'
+import { passMovie,findTopFiveMovies} from './appwrite.js'
 
 
 
@@ -63,9 +63,9 @@ const toggleFunction=()=>{
       }
        
       const data = await response.json()
-      console.log(data)
-
       setMovies(data.results) 
+      
+      console.log(data)
     }catch(err){
       setError(true)
       console.log(err)
@@ -77,7 +77,10 @@ const toggleFunction=()=>{
 
   useEffect(()=>{
     getMovies(debounceSearchTerm),
-    passMovie()
+    passMovie(searchQuery ? debounceSearchTerm : '',movies[0])
+
+    //Bottom function searches top fives movies  that searched by users. I need only show UI enabling responsive(Desktop,Tablet,Mobile).
+    findTopFiveMovies()
   },[debounceSearchTerm])
 
  return(
